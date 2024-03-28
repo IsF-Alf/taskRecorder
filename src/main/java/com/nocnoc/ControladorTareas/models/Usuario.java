@@ -19,7 +19,7 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String email, String contraseña, RolAsignado rol, LocalDateTime fechaRegistro)
+    public Usuario(String nombre, String email, String contraseña, RolAsignado rol)
     {
         this.nombre = nombre;
         this.email = email;
