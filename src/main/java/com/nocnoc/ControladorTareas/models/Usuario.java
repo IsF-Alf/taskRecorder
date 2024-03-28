@@ -1,11 +1,9 @@
 package com.nocnoc.ControladorTareas.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 @Entity
 public class Usuario {
     @Id
@@ -15,6 +13,8 @@ public class Usuario {
     private RolAsignado rol;
     private String tokenRestablecimiento;
     private LocalDateTime fechaRegistro;
+    @OneToMany(mappedBy = "usuarioAsignado", fetch = FetchType.EAGER)
+    private Set<Tarea> tareasAsignadas;
 
     public Usuario() {
     }

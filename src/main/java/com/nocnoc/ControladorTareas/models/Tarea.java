@@ -1,13 +1,11 @@
 package com.nocnoc.ControladorTareas.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-
+@Entity
 public class Tarea {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -15,8 +13,11 @@ public class Tarea {
     private String titulo, descripcion;
     private EstadoTarea estado;
     private LocalDateTime fechaCreacion, fechaUltimaModificacion;
+    @ManyToOne
     private Usuario usuarioAsignado;
+    @OneToMany(mappedBy = "tarea", fetch = FetchType.EAGER)
     private Set<Comentario> comentarios = new HashSet<>();
+    @OneToMany(mappedBy = "tarea", fetch = FetchType.EAGER)
     private Set<ArchivoAdjunto> archivosAdjuntos = new HashSet<>();
 
     public Tarea() {

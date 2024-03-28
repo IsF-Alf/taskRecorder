@@ -1,12 +1,17 @@
 package com.nocnoc.ControladorTareas.models;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+@Entity
 public class Comentario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String contenido;
     private LocalDateTime fechaCreacion;
     private Usuario usuario;
+    @ManyToOne
     private Tarea tarea;
 
     public Comentario() {
