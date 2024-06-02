@@ -7,7 +7,7 @@ public class ArchivoAdjunto {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    private String nombreArchivo, tipoArchivo, urlAlmacenamient;
+    private String nombreArchivo, tipoArchivo, urlAlmacenamiento;
     @ManyToOne
     private Usuario usuario;
     @ManyToOne
@@ -16,12 +16,12 @@ public class ArchivoAdjunto {
     public ArchivoAdjunto() {
     }
 
-    public ArchivoAdjunto(String nombreArchivo, String tipoArchivo, String urlAlmacenamient, Usuario usuario,
+    public ArchivoAdjunto(String nombreArchivo, String tipoArchivo, String urlAlmacenamiento, Usuario usuario,
                           Tarea tarea)
     {
         this.nombreArchivo = nombreArchivo;
         this.tipoArchivo = tipoArchivo;
-        this.urlAlmacenamient = urlAlmacenamient;
+        this.urlAlmacenamiento = urlAlmacenamiento;
         this.usuario = usuario;
         this.tarea = tarea;
     }
@@ -46,12 +46,12 @@ public class ArchivoAdjunto {
         this.tipoArchivo = tipoArchivo;
     }
 
-    public String getUrlAlmacenamient() {
-        return urlAlmacenamient;
+    public String getUrlAlmacenamiento() {
+        return urlAlmacenamiento;
     }
 
-    public void setUrlAlmacenamient(String urlAlmacenamient) {
-        this.urlAlmacenamient = urlAlmacenamient;
+    public void setUrlAlmacenamiento(String urlAlmacenamiento) {
+        this.urlAlmacenamiento = urlAlmacenamiento;
     }
 
     public Usuario getUsuario() {
