@@ -11,13 +11,13 @@ public class ArchivoAdjunto {
     @ManyToOne
     private Usuario usuario;
     @ManyToOne
-    private Tarea tarea;
+    private Task tarea;
 
     public ArchivoAdjunto() {
     }
 
     public ArchivoAdjunto(String nombreArchivo, String tipoArchivo, String urlAlmacenamiento, Usuario usuario,
-                          Tarea tarea)
+                          Task tarea)
     {
         this.nombreArchivo = nombreArchivo;
         this.tipoArchivo = tipoArchivo;
@@ -62,11 +62,11 @@ public class ArchivoAdjunto {
         this.usuario = usuario;
     }
 
-    public Tarea getTarea() {
+    public Task getTarea() {
         return tarea;
     }
 
-    public void setTarea(Tarea tarea) {
+    public void setTarea(Task tarea) {
         this.tarea = tarea;
     }
 }

@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 @Entity
-public class Tarea {
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
@@ -20,9 +20,9 @@ public class Tarea {
     @OneToMany(mappedBy = "tarea", fetch = FetchType.EAGER)
     private Set<ArchivoAdjunto> archivosAdjuntos = new HashSet<>();
 
-    public Tarea() {
+    public Task() {
     }
-    public Tarea(String titulo, String descripcion, EstadoTarea estado, Usuario usuarioAsignado) {
+    public Task(String titulo, String descripcion, EstadoTarea estado, Usuario usuarioAsignado) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.estado = estado;

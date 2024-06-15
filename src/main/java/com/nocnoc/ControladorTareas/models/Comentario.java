@@ -12,12 +12,12 @@ public class Comentario {
     private LocalDateTime fechaCreacion;
     private Usuario usuario;
     @ManyToOne
-    private Tarea tarea;
+    private Task tarea;
 
     public Comentario() {
     }
 
-    public Comentario(String contenido, Usuario usuario, Tarea tarea) {
+    public Comentario(String contenido, Usuario usuario, Task tarea) {
         this.contenido = contenido;
         this.usuario = usuario;
         this.tarea = tarea;
@@ -52,11 +52,11 @@ public class Comentario {
         this.usuario = usuario;
     }
 
-    public Tarea getTarea() {
+    public Task getTarea() {
         return tarea;
     }
 
-    public void setTarea(Tarea tarea) {
+    public void setTarea(Task tarea) {
         this.tarea = tarea;
     }
 }

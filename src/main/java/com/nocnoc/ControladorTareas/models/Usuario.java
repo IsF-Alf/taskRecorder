@@ -14,7 +14,7 @@ public class Usuario {
     private String tokenRestablecimiento;
     private LocalDateTime fechaRegistro;
     @OneToMany(mappedBy = "usuarioAsignado", fetch = FetchType.EAGER)
-    private Set<Tarea> tareasAsignadas;
+    private Set<Task> tareasAsignadas;
 
     public Usuario() {
     }
